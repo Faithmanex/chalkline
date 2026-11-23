@@ -60,7 +60,7 @@ landing.css     marketing + case study styles
 
 ## Design notes
 
-- **Paper as an instrument.** Cream ground, hairline rules, tabular figures, Bodoni Moda for display, Archivo for body, IBM Plex Mono for numbers. One chalk accent (`#d9a52f`) means *act*; red (`#b23a2c`) only ever means late or owed.
+- **Paper as an instrument.** Cream ground, hairline rules, tabular figures, Newsreader for display, Archivo for body, IBM Plex Mono for numbers. One chalk accent (`#d9a52f`) means *act*; red (`#b23a2c`) only ever means late or owed.
 - **A booking is a question until the shop answers it.** `new → confirmed → converted`, or `declined`. Confirming and writing the order are deliberately two steps, because a shop says "come at 4" before it knows the price.
 - **The board stores vectors** in a fixed 1000 × 1400 space, so screen, export and print are the same drawing at three sizes.
 
