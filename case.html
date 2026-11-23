@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — Chalkline</title>
+<meta name="description" content="How Chalkline was designed: the paperwork metaphor, why a booking is a question until the shop answers it, and why the design board stores vectors instead of pixels.">
+<meta name="theme-color" content="#fbf7ec">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="landing.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%231b1813'/%3E%3Cpath d='M4 17 L20 7' stroke='%23d9a52f' stroke-width='2.2'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="index.html" aria-label="Chalkline home">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="0.5" y="0.5" width="23" height="23" fill="none" stroke="#1b1813"/>
+        <path d="M4 17.5 L20 6.5" stroke="#d9a52f" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="4" cy="17.5" r="1.5" fill="#1b1813"/>
+      </svg>
+      <b>Chalkline</b>
+    </a>
+    <nav aria-label="Sections">
+      <a href="index.html#board">Design board</a>
+      <a href="index.html#booked">Booking page</a>
+      <a href="index.html#price">Pricing</a>
+      <a href="case.html" style="color:var(--ink)">Case study</a>
+    </nav>
+    <div class="act">
+      <a class="btn sm" href="app.html?demo=1">Open the demo shop</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="doc">
+
+    <section style="padding:64px 0 8px">
+      <div class="eyebrow">Case study · 2026</div>
+      <h1 class="display" style="margin-top:18px;font-size:clamp(38px,5vw,64px)">The paperwork is<br>the product.</h1>
+      <p class="lede" style="margin-top:22px;max-width:60ch">A tailoring shop does not need a better dashboard. It needs the order book, the measuring tape and the chalk to stop disagreeing with each other. Chalkline is that, built as a real product with a real price.</p>
+    </section>
+
+    <dl class="kv" style="margin-top:36px">
+      <dt>Role</dt><dd>Product, design and code — one person</dd>
+      <dt>Scope</dt><dd>Workbench, client booking page, design board, print tickets, pricing</dd>
+      <dt>Stack</dt><dd>Vanilla ES modules, CSS, Canvas 2D, <span class="mono">node:test</span></dd>
+      <dt>Size</dt><dd>~4,900 lines including tests and styles; no dependencies, no build step</dd>
+      <dt>Status</dt><dd>Shipped as a live demo. Not yet sold to a shop — that is the next step, listed honestly below</dd>
+    </dl>
+
+    <hr>
+
+    <h2 class="display">Starting point</h2>
+    <p>The reference points were physical, not digital: the hardback order book every tailoring shop keeps behind the counter, the carbon-copy ticket that goes to the cutter, and the pattern paper the tailor chalks on. All three already work. They are fast to write in, they never lose a client's numbers, and they survive a power cut.</p>
+    <p>What they do badly is answer questions in the plural: how much is owed today, who is late, which five pieces are on the floor, what a client's last three waist measurements were. That is the whole product surface. Everything else a shop owner might want is a report someone else sells.</p>
+
+    <blockquote>The design constraint was not “make it modern”. It was “make it behave like the book, then let it answer questions the book cannot.”</blockquote>
+
+    <h2 class="display">What I refused to build</h2>
+    <ul>
+      <li><strong>A dashboard.</strong> No KPI tiles, no line chart of “orders per week” as the first screen. A shop opens this at 8am and wants to know what is late.</li>
+      <li><strong>A generic table-of-everything.</strong> Orders, clients, bookings are three different shapes of work and get three different screens. The board is the only place they meet.</li>
+      <li><strong>An AI assistant.</strong> Not because it is hard, but because a shop with 20 orders a month does not have a question that a properly built order book cannot answer. Suggesting otherwise would be selling theatre.</li>
+      <li><strong>An account.</strong> Sign-up is where small-shop software dies. Data lives in the browser and moves by backup file; unlocking is a signed key rather than a login — today the demo checkout simply flips the flag.</li>
+    </ul>
+
+    <h2 class="display">Three decisions</h2>
+
+    <h3 class="display" style="font-size:24px">1. Paper, as an instrument — not as a costume</h3>
+    <p>The interface is cream paper, hairline rules, tabular figures and one chalk accent that only ever means <em class="soft">act</em> (confirm, print, take the money). Red is reserved for lateness and debt, so it never appears decoratively. Display type is Bodoni Moda because that is the vocabulary of a tailor's signage; body and figures are Archivo and IBM Plex Mono so they read as equipment, not as a magazine.</p>
+    <p>The test I kept applying: if a screen were printed on A4 tomorrow, would it still make sense? Order sheets, tickets and client cards all pass. The board passes because it <em class="soft">is</em> a sheet.</p>
+
+    <h3 class="display" style="font-size:24px">2. A booking is a question until the shop answers it</h3>
+    <p>Most booking tools treat a request as a confirmed appointment, which is how a tailor ends up with a client at the door on the day the shop is closed. Chalkline has four states — <span class="mono">new → confirmed → converted</span>, or <span class="mono">declined</span> — and the Bookings screen is grouped by what the shop owes the client: an answer, today, later, or nothing.</p>
+    <p>Confirming and making the order are deliberately two steps. The shop often answers “yes, come at 4” without knowing the price, and the order is written after the fitting. Merging them would force a price into a conversation that has not happened yet.</p>
+
+    <h3 class="display" style="font-size:24px">3. The board stores vectors in a fixed sheet</h3>
+    <p>Chalk strokes are stored as points in a 1000 × 1400 space, not as an image. That single choice gives the screen, the PNG export and the printed ticket the same drawing at three different sizes, and keeps an order's design at a few kilobytes in local storage instead of a few hundred. Undo is a stack of snapshots; erasing is a hit test over segments.</p>
+    <p>Measurement pins are the part I would defend hardest. A pin is not a label — it is a binding to a number for that client and garment. Move from “Bust 38” to a re-measure at 39 and the pin follows, because the sheet never stored the number, only the reference.</p>
+
+    <h2 class="display">The money</h2>
+    <p>One shop, one price. Free forever at 25 orders — a working month. $12 a month, or $99 a year. No per-seat pricing, because the shop is one room with two cutters and a laptop, and charging per person would punish exactly the behaviour the software encourages: letting the cutter see the ticket.</p>
+    <p>The paywall sits where work begins. Not a nag banner: at <span class="mono">New order</span>, the 26th order opens the upgrade sheet and says why. Everything that makes the shop run — board, tickets, booking page, backups — stays available on the free plan, because a crippled free tier teaches a tailor that the software is unreliable.</p>
+
+    <h2 class="display">What is not done</h2>
+    <ul>
+      <li><strong>Hosting the booking link.</strong> The shop's public page currently needs the folder served somewhere. A real product serves <span class="mono">shop.chalkline.app</span> and keeps the workbench local. This is a domain and a static host, not an engineering problem — and it is the difference between a demo and a subscription.</li>
+      <li><strong>Two devices, one book.</strong> Data is per-browser. Two laptops in the same shop currently mean two books and a backup file passed by hand. The honest fix is sync, which changes the architecture, so it waits until a shop asks for it.</li>
+      <li><strong>Real payment collection.</strong> The upgrade flow ends at a placeholder checkout. Wiring a payment link is an afternoon; deciding the refund policy is not.</li>
+      <li><strong>Garment-specific forms.</strong> One body form serves every garment today. Per-garment technical drawings would be nicer, and would also be the first thing to become a maintenance tax.</li>
+    </ul>
+
+    <h2 class="display">What I would do next</h2>
+    <p>Host the booking page, take one shop's real season through it, and watch where the paper wins. My guess, before doing it: writing an order is faster on paper for the first month, and the software only starts winning when the shop needs to answer “what is owed?” without walking to the counter. That is the moment to sell, and it is worth finding out whether it is real before building anything else.</p>
+
+    <hr>
+
+    <div style="display:flex;flex-wrap:wrap;gap:12px;padding-bottom:80px">
+      <a class="btn" href="app.html?demo=1">Open the demo shop</a>
+      <a class="btn ghost" href="https://github.com/Faithmanex/chalkline" target="_blank" rel="noopener">Read the source ↗</a>
+    </div>
+
+  </article>
+</main>
+
+</body>
+</html>

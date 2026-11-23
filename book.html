@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a fitting — Chalkline</title>
+<meta name="description" content="Book a measuring, fitting or alteration slot with your tailor. Pick a time, leave your number, done.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="booking-page">
+<main class="book-wrap">
+  <header class="book-head">
+    <a class="brand brand-dark" href="app.html">
+      <span class="monogram" id="book-monogram">C</span>
+      <span class="brand-text"><b id="book-shop">Chalkline</b><small id="book-tag">Bespoke tailoring</small></span>
+    </a>
+    <div class="book-contact" id="book-contact"></div>
+  </header>
+
+  <section class="book-intro">
+    <p class="micro">Book an appointment</p>
+    <h1 id="book-title">Come in for a measuring.</h1>
+    <p class="lede" id="book-lede">Pick a service, a day and a time. We keep the tape and the chai ready.</p>
+  </section>
+
+  <form id="book-form" class="book-form" novalidate>
+    <section class="book-section">
+      <div class="book-step"><span class="step-n">01</span><h2>What do you need?</h2></div>
+      <div class="service-grid" id="service-grid"></div>
+    </section>
+
+    <section class="book-section">
+      <div class="book-step"><span class="step-n">02</span><h2>Which garment?</h2></div>
+      <div class="garment-grid" id="garment-grid"></div>
+    </section>
+
+    <section class="book-section">
+      <div class="book-step"><span class="step-n">03</span><h2>When suits you?</h2></div>
+      <div class="day-strip" id="day-strip" role="group" aria-label="Pick a day"></div>
+      <div class="slot-grid" id="slot-grid" role="group" aria-label="Pick a time"></div>
+      <p class="book-hint" id="slot-hint">Pick a day to see open times.</p>
+    </section>
+
+    <section class="book-section">
+      <div class="book-step"><span class="step-n">04</span><h2>Who are we expecting?</h2></div>
+      <div class="book-fields">
+        <label class="label">Your name<input class="input" name="name" autocomplete="name" placeholder="Full name" required></label>
+        <label class="label">Phone / WhatsApp<input class="input" name="phone" type="tel" autocomplete="tel" placeholder="0300 1234567" required></label>
+        <label class="label">Anything we should know?<textarea class="input" name="notes" rows="3" placeholder="Wedding on the 20th, bringing my own fabric."></textarea></label>
+      </div>
+      <p class="book-error" id="book-error" hidden></p>
+      <button class="btn primary book-submit" type="submit" id="book-submit">Confirm booking</button>
+      <p class="book-hint">No payment now. The shop confirms on WhatsApp.</p>
+    </section>
+  </form>
+
+  <section class="book-success" id="book-success" hidden></section>
+
+  <footer class="book-foot">
+    <span>Booked through <b>Chalkline</b> — the tailor's workbench.</span>
+    <a href="app.html">I'm the tailor →</a>
+  </footer>
+</main>
+<script src="domain.js"></script>
+<script src="booking.js"></script>
+</body>
+</html>

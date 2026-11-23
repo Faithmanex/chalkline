@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The workbench — Chalkline</title>
+<meta name="description" content="Bookings, client measurements, orders and a design board for tailoring shops. Cut, stitch, trial, deliver — on one sheet.">
+<meta name="theme-color" content="#1b1813">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="app">
+<div class="shell">
+  <aside class="rail">
+    <a class="brand" href="#/today">
+      <span class="monogram" id="monogram">C</span>
+      <span class="brand-text">
+        <b id="shop-name">Chalkline</b>
+        <small id="shop-tag">The tailor's workbench</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Sections">
+      <a href="#/today" data-nav="today"><span class="ico" data-ico="board"></span>Today<span class="nav-count" id="nav-today"></span></a>
+      <a href="#/orders" data-nav="orders"><span class="ico" data-ico="tag"></span>Orders</a>
+      <a href="#/bookings" data-nav="bookings"><span class="ico" data-ico="cal"></span>Bookings<span class="nav-count" id="nav-bookings"></span></a>
+      <a href="#/clients" data-nav="clients"><span class="ico" data-ico="people"></span>Clients</a>
+      <a href="#/money" data-nav="money"><span class="ico" data-ico="coin"></span>Money</a>
+    </nav>
+
+    <div class="rail-foot">
+      <a href="book.html" target="_blank" rel="noopener" class="rail-link">Booking page<span aria-hidden="true">↗</span></a>
+      <a href="#/settings" data-nav="settings" class="rail-link"><span class="ico" data-ico="cog"></span>Settings</a>
+      <div class="plan" id="plan-chip"></div>
+    </div>
+  </aside>
+
+  <main class="view" id="view" tabindex="-1"></main>
+</div>
+
+<dialog id="dlg" class="sheet"></dialog>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<div class="print-root" id="print" aria-hidden="true"></div>
+<input type="file" id="restore-input" accept="application/json" hidden>
+
+<script src="domain.js"></script>
+<script src="canvas.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

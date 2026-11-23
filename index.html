@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chalkline — the workbench for a bespoke tailor</title>
+<meta name="description" content="Chalkline is the software a tailoring shop runs on: a booking page that fills itself, a measurement book that never forgets a client, and a pattern-paper design board for the tailor's chalk.">
+<meta name="theme-color" content="#fbf7ec">
+<meta property="og:title" content="Chalkline — the workbench for a bespoke tailor">
+<meta property="og:description" content="Bookings, measurements, orders, money and the tailor's design board — one book, offline, on any laptop in the shop.">
+<meta property="og:image" content="shots/today.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="landing.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%231b1813'/%3E%3Cpath d='M4 17 L20 7' stroke='%23d9a52f' stroke-width='2.2'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="index.html" aria-label="Chalkline home">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="0.5" y="0.5" width="23" height="23" fill="none" stroke="#1b1813"/>
+        <path d="M4 17.5 L20 6.5" stroke="#d9a52f" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="4" cy="17.5" r="1.5" fill="#1b1813"/>
+      </svg>
+      <b>Chalkline</b>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#board">Design board</a>
+      <a href="#booked">Booking page</a>
+      <a href="#price">Pricing</a>
+      <a href="case.html">Case study</a>
+    </nav>
+    <div class="act">
+      <a class="btn ghost sm" href="book.html">Book a fitting</a>
+      <a class="btn sm" href="app.html?demo=1">Open the demo shop</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ---------------------------------------------------------------- hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-in">
+      <div>
+        <div class="eyebrow">Software for bespoke tailors · v1.0</div>
+        <h1 class="display" style="margin-top:20px">The chalk, the tape,<br>and the <i>book</i>.</h1>
+      </div>
+      <div class="hero-side">
+        <p class="lede">A garment lives in three places: the appointment book, the measurement book, and whatever the tailor draws with chalk. Chalkline keeps all three on one screen so nothing is remembered twice.</p>
+        <div class="hero-acts">
+          <a class="btn" href="app.html?demo=1">Open the demo shop</a>
+          <a class="btn ghost" href="book.html">See the client side</a>
+        </div>
+        <div class="hero-meta">
+          <span><i></i>Works offline</span>
+          <span><i></i>No sign-up</span>
+          <span><i></i>Prints on A4</span>
+          <span><i></i>30 unit tests</span>
+        </div>
+      </div>
+    </div>
+    <figure class="shot-hero" style="padding-bottom:44px">
+      <div class="shot shot-16x10">
+        <img src="shots/today.png" alt="The Chalkline board: due today, late, on the floor, owed to you, then five stage columns from Cutting to Ready.">
+      </div>
+      <figcaption><b>fig. 01</b> 09:00 — two pieces late, four on the floor, Rs 52,000 still owed across the shop.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------------- steps -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="display">A shop's day, in five moves</h2>
+      <div class="eyebrow">The board is these five columns</div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <div class="t">Booked</div>
+        <p>The client picks a slot from a link. It lands in the shop with a name, a phone number and a garment.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <div class="t">Cutting</div>
+        <p>Measurements go on the sheet, chalk goes on the form, the ticket goes to the cutter.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <div class="t">Stitching</div>
+        <p>Every order shows its balance, so the shop knows what to collect before the garment leaves.</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <div class="t">Trial</div>
+        <p>The fitting moves the order forward. Notes and re-cuts stay attached to the same sheet.</p>
+      </div>
+      <div class="step">
+        <div class="n">05</div>
+        <div class="t">Ready</div>
+        <p>Printed, checked, paid. The order moves to delivered and the history stays readable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------------- board -->
+<section class="section" id="board">
+  <div class="wrap">
+    <div class="split">
+      <figure>
+        <div class="shot" style="aspect-ratio:3/4;max-height:640px">
+          <img src="shots/board.png" alt="The design board: a chalk sketch over a dress form, red measurement pins saying Bust 38 inches and Waist 31 inches, and a palette of five chalk colours.">
+        </div>
+        <figcaption><b>fig. 02</b> The board is a fixed 1000 × 1400 sheet. What you see is what prints.</figcaption>
+      </figure>
+      <div class="split-body">
+        <div class="eyebrow">The design board</div>
+        <h3 class="display" style="margin-top:12px">Draw it once, hand it to the cutter.</h3>
+        <p>Chalk, line, arrow, note, erase. Five chalk colours. A garment form faint enough to draw over, and a grid that snaps to the same spacing as pattern paper.</p>
+        <p>Drop a measurement pin and it binds to the client's real number — <span class="mono">Bust 38"</span> stays on the bust, not floating somewhere near it. Pins, strokes and notes are saved as vectors against the order, so the sheet comes back exactly as it was left.</p>
+        <p>Export the sheet as a PNG for a WhatsApp message, or print it into the order ticket at full fidelity.</p>
+      </div>
+    </div>
+
+    <div class="split flip" style="margin-top:56px">
+      <figure>
+        <div class="shot shot-tall" style="aspect-ratio:5/7;max-width:420px">
+          <img src="shots/sheet.png" alt="An exported Chalkline design sheet: the dress form, the chalk marks, two measurement pins and a column of the client's eight measurements.">
+        </div>
+        <figcaption><b>fig. 03</b> The same sheet, exported — measurements down the side with the date they were taken.</figcaption>
+      </figure>
+      <div class="split-body">
+        <div class="eyebrow">One drawing, three outputs</div>
+        <h3 class="display" style="margin-top:12px">The screen, the PNG, the ticket.</h3>
+        <p>Because the sheet is stored as vectors in a fixed space, the drawing that shows on a laptop at 11am is the same drawing that goes out on paper at 4pm — and the whole design costs a few kilobytes, not a few hundred.</p>
+        <p>A pin never stores a number, only a reference to the client's measurement for that garment. Re-measure a waist and every sheet that pinned it follows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------------- booking -->
+<section class="section" id="booked">
+  <div class="wrap">
+    <div class="split flip">
+      <figure>
+        <div class="shot shot-16x10">
+          <img src="shots/booking.png" alt="The public booking page for Nusrat Tailors: choose a service, a day and a time, then leave a name and phone number.">
+        </div>
+        <figcaption><b>fig. 04</b> The client-facing page. No app, no account — a URL and a thumb.</figcaption>
+      </figure>
+      <div class="split-body">
+        <div class="eyebrow">Getting booked</div>
+        <h3 class="display" style="margin-top:12px">The link you send instead of explaining your hours.</h3>
+        <p>Each shop gets a booking page that knows its opening hours, its closing day, its slot length, and which slots are already gone. A booking that arrives is <em class="soft">unanswered</em> until the shop says yes — so a request never looks like a promise.</p>
+        <p>From the booking, one dialog makes the order: garment, price, deposit, due date. The client book is created with the measurements already attached, and the appointment is marked converted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------------- money + ticket -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="display">The two things a shop is asked about</h2>
+      <div class="eyebrow">What is owed, and what is on the paper</div>
+    </div>
+    <div class="split" style="align-items:start">
+      <div class="split-body">
+        <div class="eyebrow">Money</div>
+        <h3 class="display" style="margin-top:12px">Know what is owed before you ask for it.</h3>
+        <p>Every order carries a total, a deposit and a ledger of payments. The board totals the balances, the money screen shows six months of collection, and a client card says what that name still owes — in red, in mono, at the size money deserves.</p>
+        <p style="margin-top:26px"></p>
+        <div class="eyebrow">Measurements</div>
+        <h3 class="display" style="margin-top:12px">A client's numbers, per garment, with history.</h3>
+        <p>Measurements are stored per person and per garment, in inches or centimetres, converted on the way in and never overwritten — a new entry is a new date. A twelve-year-old customer's first shirt measurements are still there when he comes back for a blazer.</p>
+      </div>
+      <div>
+        <div class="ticket" role="img" aria-label="Sample printed order ticket">
+          <div class="tk-top">
+            <div class="tk-shop">Nusrat Tailors</div>
+            <div class="tk-no">#1041</div>
+          </div>
+          <div class="tk-row"><span>Garment</span><span>Dress / kameez</span></div>
+          <div class="tk-row"><span>Client</span><span>Ayesha Khan</span></div>
+          <div class="tk-row"><span>Due</span><span>25 Nov 2026</span></div>
+          <div class="tk-grid">
+            <div><small>Bust</small>38"</div>
+            <div><small>Underbust</small>32"</div>
+            <div><small>Waist</small>31"</div>
+            <div><small>Hip</small>40"</div>
+            <div><small>Shoulder</small>14.5"</div>
+            <div><small>Sleeve</small>22"</div>
+            <div><small>Length</small>44"</div>
+            <div><small>Neck</small>7"</div>
+          </div>
+          <div class="tk-boxes">
+            <span><i></i>CUT</span><span><i></i>STITCH</span><span><i></i>TRIAL</span><span><i></i>FINISH</span><span><i></i>PRESS</span><span><i></i>QC</span>
+          </div>
+        </div>
+        <figcaption style="margin-top:14px"><b>fig. 05</b> One ticket per garment. The design sheet prints above the measurements.</figcaption>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------------- pricing -->
+<section class="section" id="price">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="display">Priced for one shop, not one seat</h2>
+      <div class="eyebrow">A master tailor, two cutters and a laptop</div>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <div class="eyebrow">Free</div>
+        <div class="price">$0</div>
+        <ul>
+          <li>25 orders, forever</li>
+          <li>Clients, measurements, design board</li>
+          <li>Booking page and ticket printing</li>
+        </ul>
+      </div>
+      <div class="plan pick">
+        <div style="display:flex;justify-content:space-between;align-items:center"><div class="eyebrow">Shop</div><span class="badge">Most shops</span></div>
+        <div class="price">$12<small> /month</small></div>
+        <ul>
+          <li>Unlimited orders and clients</li>
+          <li>Every device in the workroom</li>
+          <li>Backups that move between machines</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <div class="eyebrow">Shop, yearly</div>
+        <div class="price">$99<small> /year</small></div>
+        <ul>
+          <li>Two months free</li>
+          <li>The season-start purchase</li>
+          <li>Same everything</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top:22px;max-width:60ch">The free plan is 25 real orders — a working month, not a teaser. The limit is enforced where the work starts: at <em class="soft">New order</em>, the 26th opens the upgrade sheet with the reason stated.</p>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------------- build -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="display">How it is built</h2>
+      <div class="eyebrow">No framework, no build step, no server</div>
+    </div>
+    <dl class="build">
+      <div><dt>Stack</dt><dd>Vanilla ES modules in UMD factories, one stylesheet, one canvas renderer. Open the folder and it runs.</dd></div>
+      <div><dt>State</dt><dd>Everything in <span class="mono">localStorage</span>, with a JSON backup and restore. No account, no network call, no telemetry.</dd></div>
+      <div><dt>Tests</dt><dd>30 <span class="mono">node:test</span> cases over the domain (money, stages, booking collisions, unit conversion) and the canvas geometry.</dd></div>
+      <div><dt>Drawing</dt><dd>Strokes stored as vectors in a fixed 1000 × 1400 space, so screen, export and print are the same drawing.</dd></div>
+      <div><dt>Print</dt><dd>A real print stylesheet: one ticket per garment on A4, with the design PNG embedded as a data URL.</dd></div>
+      <div><dt>Money</dt><dd>Integer-safe totals and a payment ledger per order. The board's "owed to you" is the sum of balances, not a separate number.</dd></div>
+    </dl>
+    <p class="small" style="margin-top:26px"><a href="case.html" style="border-bottom:1px solid var(--line-2)">Read the case study →</a></p>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------------- band -->
+<section class="band">
+  <div class="wrap" style="display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center">
+    <div>
+      <h2 class="display">It opens with a shop already in it.</h2>
+    </div>
+    <div>
+      <p class="lede" style="margin-bottom:22px">Nusrat Tailors is a demo shop with nine orders, five clients and a day's bookings. Poke at everything; nothing you do there costs money.</p>
+      <div class="hero-acts">
+        <a class="btn" href="app.html?demo=1">Open the demo shop</a>
+        <a class="btn ghost" href="book.html">Book a fitting</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;width:100%">
+    <div>Chalkline · built by <a href="case.html">a designer who wanted the paperwork to behave</a></div>
+    <div class="links">
+      <a href="app.html?demo=1">Demo shop</a>
+      <a href="book.html">Booking page</a>
+      <a href="case.html">Case study</a>
+      <a href="https://github.com/Faithmanex/chalkline" target="_blank" rel="noopener">Source ↗</a>
+    </div>
+  </div>
+</footer>
+
+</main>
+</body>
+</html>
