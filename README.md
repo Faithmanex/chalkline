@@ -2,7 +2,7 @@
 
 **The workbench for a bespoke tailoring shop.** Bookings, client measurements, orders, money, and a pattern-paper design board where the tailor chalks the garment — in one place, offline, on any laptop in the workroom.
 
-Live demo → **[chalkline.netlify.app](https://chalkline.netlify.app)** · Case study → **[case.html](https://chalkline.netlify.app/case.html)** · Client booking page → **[book.html](https://chalkline.netlify.app/book.html)**
+Live demo → **[chalkline.netlify.app](https://chalkline-app.netlify.app)** · Case study → **[case.html](https://chalkline-app.netlify.app/case.html)** · Client booking page → **[book.html](https://chalkline-app.netlify.app/book.html)**
 
 ![The Chalkline board](shots/today.png)
 
